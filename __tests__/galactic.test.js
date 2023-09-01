@@ -43,13 +43,15 @@ describe('GalacticAge', () => {
 
 });
 
-describe('yearsSince', () => {
-
+describe('yearsDifference', () => {
+  
   let ageCalculator;
   let yearsPassed;
+  let yearsToGo;
   beforeEach(() => {
     ageCalculator = new GalacticAge(25);
-    yearsPassed = ageCalculator.yearsSince(20);
+    yearsToGo = ageCalculator.yearsDifference(35);
+    yearsPassed = ageCalculator.yearsDifference(20);
   });
 
   test('should return an object containing the number of Earth years passed since a specified age', () => {
@@ -70,17 +72,6 @@ describe('yearsSince', () => {
 
   test('should return an object containing the number of Jupiter years passed since a specified age', () => {
     expect(yearsPassed["Jupiter"]).toEqual("0.42 Jupiter years have passed.");
-  });
-
-});
-
-describe('yearsUntil', () => {
-  
-  let ageCalculator;
-  let yearsToGo;
-  beforeEach(() => {
-    ageCalculator = new GalacticAge(25);
-    yearsToGo = ageCalculator.yearsUntil(35);
   });
 
   test('should return an object containing the number of Earth years yet to pass until a specified future age', () => {
