@@ -17,31 +17,55 @@ export class GalacticAge {
     return earthYears / planetYear;
   }
 
-  yearsSince(previousAge) {
+  // yearsSince(previousAge) {
 
-    const yearList = {};
-    const earthYears = this.earthYears - previousAge;
-    yearList["Earth"] = `${earthYears} Earth years have passed.`;
+  //   const yearList = {};
+  //   const earthYears = this.earthYears - previousAge;
+  //   yearList["Earth"] = `${earthYears} Earth years have passed.`;
 
-    const planets = Object.keys(this.yearConversions);
-    planets.forEach((planet) => {
-      let planetYears = this.findAgeOn(planet, earthYears).toFixed(2);
-      yearList[planet] = `${planetYears} ${planet} years have passed.`;
-    });
+  //   const planets = Object.keys(this.yearConversions);
+  //   planets.forEach((planet) => {
+  //     let planetYears = this.findAgeOn(planet, earthYears).toFixed(2);
+  //     yearList[planet] = `${planetYears} ${planet} years have passed.`;
+  //   });
   
-    return yearList;
-  }
+  //   return yearList;
+  // }
 
-  yearsUntil(futureAge) {
+  // yearsUntil(futureAge) {
     
+  //   const yearList = {};
+  //   const earthYears = futureAge - this.earthYears;
+  //   yearList["Earth"] = `${earthYears} Earth years have yet to pass.`;
+
+  //   const planets = Object.keys(this.yearConversions);
+  //   planets.forEach((planet) => {
+  //     let planetYears = this.findAgeOn(planet, earthYears).toFixed(2);
+  //     yearList[planet] = `${planetYears} ${planet} years have yet to pass.`;
+  //   });
+    
+  //   return yearList;
+  // }
+
+  yearsDifference(otherAge) {
     const yearList = {};
-    const earthYears = futureAge - this.earthYears;
-    yearList["Earth"] = `${earthYears} Earth years have yet to pass.`;
+    let earthYears = this.earthYears;
+    let string;
+
+    if (otherAge < earthYears) {
+      earthYears = earthYears - otherAge;
+      string = "years have passed.";
+    } else {
+      earthYears = otherAge - earthYears;
+      string = "years have yet to pass.";
+    }
+   
+    yearList["Earth"] = `${earthYears} Earth ${string}`;
 
     const planets = Object.keys(this.yearConversions);
     planets.forEach((planet) => {
       let planetYears = this.findAgeOn(planet, earthYears).toFixed(2);
-      yearList[planet] = `${planetYears} ${planet} years have yet to pass.`;
+      yearList[planet] = `${planetYears} ${planet} ${string}`;
     });
     
     return yearList;
