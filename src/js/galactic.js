@@ -18,8 +18,11 @@ export class GalacticAge {
 
   // return conversion of given Earth years to specified planet years
   findAgeOn(planet, earthYears = this.earthYears) {
+    if (planet === "Earth") {
+      return earthYears;
+    }
     const planetYear = this.yearConversions[planet];
-    return earthYears / planetYear;
+    return (earthYears / planetYear);
   }
 
   // return an object containing the difference in years for a specified age, for each planet:
