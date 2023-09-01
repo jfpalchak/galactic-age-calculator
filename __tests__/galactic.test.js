@@ -73,3 +73,34 @@ describe('yearsSince', () => {
   });
 
 });
+
+describe('yearsUntil', () => {
+  
+  let ageCalculator;
+  let yearsToGo;
+  beforeEach(() => {
+    ageCalculator = new GalacticAge(25);
+    yearsToGo = ageCalculator.yearsUntil(35);
+  });
+
+  test('should return an object containing the number of Earth years yet to pass until a specified future age', () => {
+    expect(yearsToGo["Earth"]).toEqual("10 Earth years have yet to pass.");
+  });
+
+  test('should return an object containing the number of Mercury years yet to pass until a specified future age', () => {
+    expect(yearsToGo["Mercury"]).toEqual("41.67 Mercury years have yet to pass.");
+  });
+
+  test('should return an object containing the number of Venus years yet to pass until a specified future age', () => {
+    expect(yearsToGo["Venus"]).toEqual("16.13 Venus years have yet to pass.");
+  });
+
+  test('should return an object containing the number of Mars years yet to pass until a specified future age', () => {
+    expect(yearsToGo["Mars"]).toEqual("5.32 Mars years have yet to pass.");
+  });
+
+  test('should return an object containing the number of Jupiter years yet to pass until a specified future age', () => {
+    expect(yearsToGo["Jupiter"]).toEqual("0.84 Jupiter years have yet to pass.");
+  });
+
+});
