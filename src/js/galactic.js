@@ -44,10 +44,19 @@ export class GalacticAge {
     return yearList;
   }
 
+  // returns the number of mayfly lifespans the given earth age has lived
   howManyMayflies() {
     const ageInMinutes = (this.earthYears * 525600);
     const numOfMayflyLives = (ageInMinutes / 5);
     return numOfMayflyLives;
+  }
+
+  // returns the dog years conversion of the given earth age
+  howManyDogYears(age = this.earthYears) {
+    let dogYears = 0;
+    if (age < 15) {
+      return dogYears;
+    }
   }
 
 }
