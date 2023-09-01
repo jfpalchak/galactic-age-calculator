@@ -36,4 +36,9 @@ describe('GalacticAge', () => {
   });
 
 
+  test('should return the given Earth age converted to Jupiter years', () => {
+    let jupiterAge = ageCalculator.findAgeOn("jupiter");
+    expect(jupiterAge).toBeCloseTo(2.11);
+  });
+
 });
