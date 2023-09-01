@@ -35,11 +35,13 @@ export class GalacticAge {
   yearsUntil(futureAge) {
     const earthYears = futureAge - this.earthYears;
     const mercuryYears = this.findAgeOn("Mercury", earthYears).toFixed(2);
-    const venusYears = this.findAgeOn('Venus', earthYears).toFixed(2);
+    const venusYears = this.findAgeOn("Venus", earthYears).toFixed(2);
+    const marsYears = this.findAgeOn("Mars", earthYears).toFixed(2);
     return {
       Earth: `${earthYears} Earth years have yet to pass.`,
       Mercury: `${mercuryYears} Mercury years have yet to pass.`,
-      Venus: `${venusYears} Venus years have yet to pass.`
+      Venus: `${venusYears} Venus years have yet to pass.`,
+      Mars: `${marsYears} Mars years have yet to pass.`
 
     }
   }
