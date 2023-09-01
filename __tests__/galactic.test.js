@@ -41,4 +41,11 @@ describe('GalacticAge', () => {
     expect(jupiterAge).toBeCloseTo(2.11);
   });
 
+  test('should return number of Earth years passed since a specified age, relative to initial age given', () => {
+    let earthYears = ageCalculator.yearsSince(20);
+    expect(earthYears).toEqual(5);
+  })
+
+
+
 });
