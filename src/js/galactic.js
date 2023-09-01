@@ -16,5 +16,7 @@ export class GalacticAge {
     return this.earthYears / this.conversions["mercuryYear"];
   }
 
-  
+  inVenusYears() {
+    return this.earthYears / this.conversions["venusYear"];
+  }
 }
