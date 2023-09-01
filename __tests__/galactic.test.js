@@ -34,6 +34,11 @@ describe('findAgeOn', () => {
     ageCalculator = new GalacticAge(25);
   });
 
+  test('should return the given Earth age if Earth is entered as an argument', () => {
+    let age = ageCalculator.findAgeOn("Earth");
+    expect(age).toBeCloseTo(25);
+  });
+
   test('should return the given Earth age converted to Mercury years', () => {
     let mercuryAge = ageCalculator.findAgeOn("Mercury");
     expect(mercuryAge).toBeCloseTo(104.17);
