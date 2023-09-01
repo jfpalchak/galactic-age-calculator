@@ -41,16 +41,35 @@ describe('GalacticAge', () => {
     expect(jupiterAge).toBeCloseTo(2.11);
   });
 
+});
+
+describe('yearsSince', () => {
+
+  let ageCalculator;
+  let yearsPassed;
+  beforeEach(() => {
+    ageCalculator = new GalacticAge(25);
+    yearsPassed = ageCalculator.yearsSince(20);
+  });
+
   test('should return an object containing the number of Earth years passed since a specified age', () => {
-    let yearsPassed = ageCalculator.yearsSince(20);
     expect(yearsPassed["Earth"]).toEqual("5 Earth years have passed.");
   });
 
   test('should return an object containing the number of Mercury years passed since a specified age', () => {
-    let yearsPassed = ageCalculator.yearsSince(20);
     expect(yearsPassed["Mercury"]).toEqual("20.83 Mercury years have passed.");
   });
 
+  test('should return an object containing the number of Venus years passed since a specified age', () => {
+    expect(yearsPassed["Venus"]).toEqual("8.06 Venus years have passed.");
+  });
 
+  test('should return an object containing the number of Mars years passed since a specified age', () => {
+    expect(yearsPassed["Mars"]).toEqual("2.66 Mars years have passed.");
+  });
+
+  test('should return an object containing the number of Jupiter years passed since a specified age', () => {
+    expect(yearsPassed["Jupiter"]).toEqual("0.42 Jupiter years have passed.");
+  });
 
 });
