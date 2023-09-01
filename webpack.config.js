@@ -19,7 +19,7 @@ module.exports = {
       verbose: true
     }),
     new HtmlWebpackPlugin({
-      title: 'Template',
+      title: 'Super Galactic Age Calculator',
       template: './src/index.html',
       inject: 'body'
     })
