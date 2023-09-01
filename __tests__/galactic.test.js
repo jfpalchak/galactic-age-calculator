@@ -23,7 +23,7 @@ describe('GalacticAge', () => {
   test('should return the given Earth age converted to Mercury years', () => {
     let mercuryAge = ageCalculator.findAgeOn("Mercury");
     expect(mercuryAge).toBeCloseTo(104.17);
-  })
+  });
 
   test('should return the given Earth age converted to Venus years', () => {
     let venusAge = ageCalculator.findAgeOn("Venus");
@@ -44,7 +44,12 @@ describe('GalacticAge', () => {
   test('should return an object containing the number of Earth years passed since a specified age', () => {
     let yearsPassed = ageCalculator.yearsSince(20);
     expect(yearsPassed["Earth"]).toEqual("5 Earth years have passed.");
-  })
+  });
+
+  test('should return an object containing the number of Mercury years passed since a specified age', () => {
+    let yearsPassed = ageCalculator.yearsSince(20);
+    expect(yearsPassed["Mercury"]).toEqual("20.83 Mercury years have passed.");
+  });
 
 
 
