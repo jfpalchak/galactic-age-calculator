@@ -19,7 +19,11 @@ export class GalacticAge {
 
   yearsSince(previousAge) {
     const earthYears = this.earthYears - previousAge;
-    return {Earth: `${earthYears} Earth years have passed.`}
+    const mercuryYears = (earthYears / this.yearConversions["Mercury"]).toFixed(2);
+    return {
+      Earth: `${earthYears} Earth years have passed.`,
+      Mercury: `${mercuryYears} Mercury years have passed.`
+    }
   }
 
 }
