@@ -17,7 +17,6 @@ export class GalacticAge {
     return earthYears / planetYear;
   }
 
-  // come back and refactor later
   yearsSince(previousAge) {
 
     const yearList = {};
@@ -35,8 +34,11 @@ export class GalacticAge {
 
   yearsUntil(futureAge) {
     const earthYears = futureAge - this.earthYears;
+    const mercuryYears = this.findAgeOn("Mercury", earthYears).toFixed(2);
     return {
-      Earth: `${earthYears} Earth years have yet to pass.`
+      Earth: `${earthYears} Earth years have yet to pass.`,
+      Mercury: `${mercuryYears} Mercury years have yet to pass.`
+
     }
   }
 
