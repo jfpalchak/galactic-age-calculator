@@ -1,5 +1,4 @@
 
-
 export class GalacticAge {
 
   constructor(userAge) {
@@ -43,6 +42,12 @@ export class GalacticAge {
     });
     
     return yearList;
+  }
+
+  howManyMayflies() {
+    const ageInMinutes = (this.earthYears * 525600);
+    const numOfMayflyLives = (ageInMinutes / 5);
+    return numOfMayflyLives;
   }
 
 }
