@@ -30,5 +30,10 @@ describe('GalacticAge', () => {
     expect(venusAge).toBeCloseTo(40.32);
   });
 
+  test('should return the given Earth age converted to Mars years', () => {
+    let marsAge = ageCalculator.findAgeOn("mars");
+    expect(marsAge).toBeCloseTo(13.30);
+  });
+
 
 });
