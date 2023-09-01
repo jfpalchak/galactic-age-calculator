@@ -20,6 +20,15 @@ describe('GalacticAge', () => {
     });
   });
 
+});
+
+describe('findAgeOn', () => {
+  
+  let ageCalculator;
+  beforeEach(() => {
+    ageCalculator = new GalacticAge(25);
+  });
+
   test('should return the given Earth age converted to Mercury years', () => {
     let mercuryAge = ageCalculator.findAgeOn("Mercury");
     expect(mercuryAge).toBeCloseTo(104.17);
