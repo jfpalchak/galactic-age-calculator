@@ -12,11 +12,11 @@ describe('GalacticAge', () => {
   });
 
   test('should create a GalacticAge object with planet year conversion rates', () => {
-    expect(ageCalculator.conversions).toEqual({
-      mercuryYear: .24,
-      venusYear: .62,
-      marsYear: 1.88,
-      jupiterYear: 11.86
+    expect(ageCalculator.yearConversions).toEqual({
+      mercury: .24,
+      venus: .62,
+      mars: 1.88,
+      jupiter: 11.86
     });
   });
 
