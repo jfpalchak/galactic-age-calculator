@@ -77,7 +77,7 @@ describe('yearsDifference', () => {
     });
   });
 
-  test('should return an object containing the number of years YET to pass on each planet until a specified future age', () => {
+  test('should return an object containing the number of years YET to pass on each planet until a specified age', () => {
     expect(yearsToGo).toEqual({
       Earth: "10 Earth years have yet to pass.",
       Mercury: "41.67 Mercury years have yet to pass.",
@@ -86,5 +86,5 @@ describe('yearsDifference', () => {
       Jupiter: "0.84 Jupiter years have yet to pass."
     });
   });
-  
+
 });
