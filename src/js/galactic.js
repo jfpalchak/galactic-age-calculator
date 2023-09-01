@@ -11,6 +11,10 @@ export class GalacticAge {
     };
   }
 
+  findPlanets() {
+    return Object.keys(this.yearConversions);
+  }
+
   // return conversion of given Earth years to specified planet years
   findAgeOn(planet, earthYears = this.earthYears) {
     const planetYear = this.yearConversions[planet];
