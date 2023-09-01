@@ -107,13 +107,13 @@ describe('howManyDogYears', () => {
     expect(dogYears).toEqual(0);
   });
 
-  test('should return 1 in dog years if the Earth age is between 15 and 23', () => {
+  test('should return 1 in dog years if the Earth age is 15 or older', () => {
     let ageCalculator = new GalacticAge(15);
     let dogYears = ageCalculator.howManyDogYears();
     expect(dogYears).toEqual(1);
   });
 
-  test('should return 2 in dog years if the Earth age is between 24 and 28', () => {
+  test('should return 2 in dog years if the Earth age 24 or older', () => {
     let ageCalculator = new GalacticAge(24);
     let dogYears = ageCalculator.howManyDogYears();
     expect(dogYears).toEqual(2);
