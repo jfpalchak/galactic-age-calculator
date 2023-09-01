@@ -20,10 +20,10 @@ export class GalacticAge {
   // come back and refactor later
   yearsSince(previousAge) {
     const earthYears = this.earthYears - previousAge;
-    const mercuryYears = (earthYears / this.yearConversions["Mercury"]).toFixed(2);
-    const venusYears = (earthYears / this.yearConversions["Venus"]).toFixed(2);
-    const marsYears = (earthYears / this.yearConversions["Mars"]).toFixed(2);
-    const jupiterYears = (earthYears / this.yearConversions["Jupiter"]).toFixed(2);
+    const mercuryYears = this.findAgeOn("Mercury", earthYears).toFixed(2);
+    const venusYears = this.findAgeOn("Venus", earthYears).toFixed(2);
+    const marsYears = this.findAgeOn("Mars", earthYears).toFixed(2);
+    const jupiterYears = this.findAgeOn("Jupiter", earthYears).toFixed(2);
     return {
       Earth: `${earthYears} Earth years have passed.`,
       Mercury: `${mercuryYears} Mercury years have passed.`,
