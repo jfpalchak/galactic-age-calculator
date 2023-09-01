@@ -44,11 +44,15 @@ describe('findAgeOn', () => {
     expect(marsAge).toBeCloseTo(13.30);
   });
 
-
   test('should return the given Earth age converted to Jupiter years', () => {
     let jupiterAge = ageCalculator.findAgeOn("Jupiter");
     expect(jupiterAge).toBeCloseTo(2.11);
   });
+
+  test('should override initial this.earthYears property if a new Earth age is entered as second argument', () => {
+    let newJupiterAge = ageCalculator.findAgeOn("Jupiter", 5);
+    expect(newJupiterAge).toBeCloseTo(0.42);
+  })
 
 });
 
@@ -63,44 +67,24 @@ describe('yearsDifference', () => {
     yearsPassed = ageCalculator.yearsDifference(20);
   });
 
-  test('should return an object containing the number of Earth years passed since a specified age', () => {
-    expect(yearsPassed["Earth"]).toEqual("5 Earth years have passed.");
+  test('should return an object containing the number of years passed on each planet since a specified age', () => {
+    expect(yearsPassed).toEqual({
+      Earth: "5 Earth years have passed.",
+      Mercury: "20.83 Mercury years have passed.",
+      Venus: "8.06 Venus years have passed.",
+      Mars: "2.66 Mars years have passed.",
+      Jupiter: "0.42 Jupiter years have passed."
+    });
   });
 
-  test('should return an object containing the number of Mercury years passed since a specified age', () => {
-    expect(yearsPassed["Mercury"]).toEqual("20.83 Mercury years have passed.");
+  test('should return an object containing the number of years YET to pass on each planet until a specified future age', () => {
+    expect(yearsToGo).toEqual({
+      Earth: "10 Earth years have yet to pass.",
+      Mercury: "41.67 Mercury years have yet to pass.",
+      Venus: "16.13 Venus years have yet to pass.",
+      Mars: "5.32 Mars years have yet to pass.",
+      Jupiter: "0.84 Jupiter years have yet to pass."
+    });
   });
-
-  test('should return an object containing the number of Venus years passed since a specified age', () => {
-    expect(yearsPassed["Venus"]).toEqual("8.06 Venus years have passed.");
-  });
-
-  test('should return an object containing the number of Mars years passed since a specified age', () => {
-    expect(yearsPassed["Mars"]).toEqual("2.66 Mars years have passed.");
-  });
-
-  test('should return an object containing the number of Jupiter years passed since a specified age', () => {
-    expect(yearsPassed["Jupiter"]).toEqual("0.42 Jupiter years have passed.");
-  });
-
-  test('should return an object containing the number of Earth years yet to pass until a specified future age', () => {
-    expect(yearsToGo["Earth"]).toEqual("10 Earth years have yet to pass.");
-  });
-
-  test('should return an object containing the number of Mercury years yet to pass until a specified future age', () => {
-    expect(yearsToGo["Mercury"]).toEqual("41.67 Mercury years have yet to pass.");
-  });
-
-  test('should return an object containing the number of Venus years yet to pass until a specified future age', () => {
-    expect(yearsToGo["Venus"]).toEqual("16.13 Venus years have yet to pass.");
-  });
-
-  test('should return an object containing the number of Mars years yet to pass until a specified future age', () => {
-    expect(yearsToGo["Mars"]).toEqual("5.32 Mars years have yet to pass.");
-  });
-
-  test('should return an object containing the number of Jupiter years yet to pass until a specified future age', () => {
-    expect(yearsToGo["Jupiter"]).toEqual("0.84 Jupiter years have yet to pass.");
-  });
-
+  
 });
