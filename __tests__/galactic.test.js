@@ -91,14 +91,46 @@ describe('yearsDifference', () => {
 
 describe('howManyMayflies', () => {
 
-  let ageCalculator;
-  beforeEach(() => {
-    ageCalculator = new GalacticAge(25);
-  });
-
-  test('should return the number of mayfly lifespans the initial earth age has lived, if no new number is given', () => {
+  test('should return the number of mayfly lifespans the given earth age has lived', () => {
+    let ageCalculator = new GalacticAge(25);
     let lifespans = ageCalculator.howManyMayflies();
     expect(lifespans).toEqual(2628000);
   });
+
+});
+
+describe('howManyDogYears', () => {
+
+  test('should return 0 in dog years if the Earth age is below 15', () => {
+    let ageCalculator = new GalacticAge(14);
+    let dogYears = ageCalculator.howManyDogYears();
+    expect(dogYears).toEqual(0);
+  });
+
+  test('should return 1 in dog years if the Earth age is between 15 and 23', () => {
+    let ageCalculator = new GalacticAge(15);
+    let dogYears = ageCalculator.howManyDogYears();
+    expect(dogYears).toEqual(1);
+  });
+
+  test('should return 2 in dog years if the Earth age is between 24 and 28', () => {
+    let ageCalculator = new GalacticAge(24);
+    let dogYears = ageCalculator.howManyDogYears();
+    expect(dogYears).toEqual(2);
+  });
+
+  test('should calculate an additional year for every five years beyond the Earth age of 24', () => {
+    let ageCalculator = new GalacticAge(34);
+    let dogYears = ageCalculator.howManyDogYears();
+    expect(dogYears).toEqual(4);
+  });
+
+  test('should calculate dog years for any Earth age given as an optional argument', () => {
+    let ageCalculator = new GalacticAge(34);
+    let dogYears = ageCalculator.howManyDogYears(40);
+    expect(dogYears).toEqual(5.2);
+  });
+
+
 
 });
