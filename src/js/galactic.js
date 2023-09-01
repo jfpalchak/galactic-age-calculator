@@ -33,18 +33,18 @@ export class GalacticAge {
   }
 
   yearsUntil(futureAge) {
+    
+    const yearList = {};
     const earthYears = futureAge - this.earthYears;
-    const mercuryYears = this.findAgeOn("Mercury", earthYears).toFixed(2);
-    const venusYears = this.findAgeOn("Venus", earthYears).toFixed(2);
-    const marsYears = this.findAgeOn("Mars", earthYears).toFixed(2);
-    const jupiterYears = this.findAgeOn("Jupiter", earthYears).toFixed(2);
-    return {
-      Earth: `${earthYears} Earth years have yet to pass.`,
-      Mercury: `${mercuryYears} Mercury years have yet to pass.`,
-      Venus: `${venusYears} Venus years have yet to pass.`,
-      Mars: `${marsYears} Mars years have yet to pass.`,
-      Jupiter: `${jupiterYears} Jupiter years have yet to pass.`
-    }
+    yearList["Earth"] = `${earthYears} Earth years have yet to pass.`;
+
+    const planets = Object.keys(this.yearConversions);
+    planets.forEach((planet) => {
+      let planetYears = this.findAgeOn(planet, earthYears).toFixed(2);
+      yearList[planet] = `${planetYears} ${planet} years have yet to pass.`;
+    });
+    
+    return yearList;
   }
 
 }
