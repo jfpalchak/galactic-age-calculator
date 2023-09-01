@@ -54,9 +54,12 @@ export class GalacticAge {
   // returns the dog years conversion of the given earth age
   howManyDogYears(age = this.earthYears) {
     let dogYears = 0;
-    if (age < 15) {
-      return dogYears;
+ 
+    if (age >= 15) {
+      dogYears = 1;
     }
+
+    return dogYears;
   }
 
 }
