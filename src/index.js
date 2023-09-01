@@ -5,9 +5,14 @@ import { GalacticAge } from './js/galactic.js';
 
 
 
-document.querySelector("form").addEventListener("submit", () => {
+
+document.querySelector("form").addEventListener("submit", (e) => {
+  e.preventDefault();
+
   const userAge = document.querySelector("input#user-age").value;
 
   const galacticAge = new GalacticAge(userAge);
-  
+
+  displayResults(galacticAge);
+
 });
