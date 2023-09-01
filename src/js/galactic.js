@@ -5,20 +5,21 @@ export class GalacticAge {
   constructor(userAge) {
     this.earthYears = userAge;
     this.yearConversions = {
-      mercury: .24,
-      venus: .62,
-      mars: 1.88,
-      jupiter: 11.86
+      Mercury: .24,
+      Venus: .62,
+      Mars: 1.88,
+      Jupiter: 11.86
     };
   }
 
   findAgeOn(planet) {
-    const planetConversion = this.yearConversions[planet];
-    return this.earthYears / planetConversion;
+    const planetYear = this.yearConversions[planet];
+    return this.earthYears / planetYear;
   }
 
   yearsSince(previousAge) {
-    return this.earthYears - previousAge;
+    const earthYears = this.earthYears - previousAge;
+    return {Earth: `${earthYears} Earth years have passed.`}
   }
 
 }
