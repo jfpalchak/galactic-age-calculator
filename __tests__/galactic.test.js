@@ -21,12 +21,12 @@ describe('GalacticAge', () => {
   });
 
   test('should return the given Earth age converted to Mercury years', () => {
-    let mercuryAge = ageCalculator.convertAgeTo("mercury");
+    let mercuryAge = ageCalculator.findAgeOn("mercury");
     expect(mercuryAge).toBeCloseTo(104.17);
   })
 
   test('should return the given Earth age converted to Venus years', () => {
-    let venusAge = ageCalculator.inVenusYears();
+    let venusAge = ageCalculator.findAgeOn("venus");
     expect(venusAge).toBeCloseTo(40.32);
   });
 

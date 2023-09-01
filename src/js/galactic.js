@@ -12,8 +12,12 @@ export class GalacticAge {
     };
   }
 
-  inMercuryYears() {
-    return this.earthYears / this.yearConversions["mercury"];
+
+  findAgeOn(chosenPlanet) {
+    switch (chosenPlanet) {
+      case ("mercury"):
+        return this.earthYears / this.yearConversions[chosenPlanet];
+    } 
   }
 
   inVenusYears() {
