@@ -2,24 +2,30 @@
 .container {
   margin: 10px auto;
 }
+h1 {
+  color: #FFFFFF;
+}
 
+h3 {
+  color: #FFFFFF;
+}
 body {
-  background-color: grey;
+  background-color: #303030
   /* color: white; */
 }
 
 /* FORM */
 #form-div {
-  background-color: rgb(90, 89, 89);
+  background-color: #424242;
   border-radius: 8px;
   padding: 10px;
-  color: white;
+  color: #FFFFFF;
 }
 
 input {
-  background-color: rgb(90, 89, 89);
+  background-color: #424242;
   border: solid rgb(198, 195, 195) 1px;
-  color: rgb(198, 195, 195);
+  color: #FFFFFF;
   margin-left: 10px;
 }
 
@@ -30,13 +36,13 @@ button {
 /* RESULTS */
 
 .phone-stack {
-  background-color: rgb(90, 89, 89);
+  background-color: #424242;
   border-radius: 8px;
   padding: 10px;
   height: 250px;
   overflow-y: auto;
   text-align: center;
-  color: rgb(198, 195, 195);
+  color: #FFFFFF;
 }
 
 li {

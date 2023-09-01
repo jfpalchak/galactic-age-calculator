@@ -3,7 +3,28 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import { GalacticAge } from './js/galactic.js';
 
+// display all information relevant to Earth 
+function displayEarthInfo(ageCalculator) {
 
+  const ul = document.createElement('ul');
+  const liFly = document.createElement('li');
+  const liDog = document.createElement('li');
+  const divEarth = document.querySelector('div#Earth');
+
+  divEarth.innerText = null;
+
+  liFly.append(
+    `During your ${ageCalculator.findAgeOn("Earth")} years on Earth, you have outlived more than ${ageCalculator.howManyMayflies()} mayflies.`
+  );
+  liDog.append(
+    `In dog years, you are ${ageCalculator.howManyDogYears()} years old.`
+  );
+
+  divEarth.append(liFly, liDog);
+
+}
+
+// display all age results for each planet
 function displayPlanetAges(ageCalculator) {
 
   const planets = ageCalculator.findPlanets();
@@ -17,27 +38,14 @@ function displayPlanetAges(ageCalculator) {
     div.innerText = null;
     pTag.append(string);
     div.append(pTag);
+    
   });
 
-  const ul = document.createElement('ul');
-  const liFly = document.createElement('li');
-  const liDog = document.createElement('li');
-  const divEarth = document.querySelector('div#Earth');
-  divEarth.innerText = null;
-  liFly.append(
-    `During your ${ageCalculator.findAgeOn("Earth")} years on Earth, you have outlived more than ${ageCalculator.howManyMayflies()} mayflies.`
-  );
-  liDog.append(
-    `In dog years, you are ${ageCalculator.howManyDogYears()} years old.`
-  );
-
-  divEarth.append(liFly, liDog);
-
-  
+  displayEarthInfo(ageCalculator);
 
 }
 
-
+// event listener for form submission, which handles all UI logic
 document.querySelector("form").addEventListener("submit", (e) => {
   e.preventDefault();
 
