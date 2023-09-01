@@ -88,3 +88,17 @@ describe('yearsDifference', () => {
   });
 
 });
+
+describe('howManyMayflies', () => {
+
+  let ageCalculator;
+  beforeEach(() => {
+    ageCalculator = new GalacticAge(25);
+  });
+
+  test('should return the number of mayfly lifespans the initial earth age has lived, if no new number is given', () => {
+    let lifespans = ageCalculator.howManyMayflies();
+    expect(lifespans).toEqual(2628000);
+  });
+
+});
