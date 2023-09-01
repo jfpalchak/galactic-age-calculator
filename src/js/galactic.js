@@ -12,11 +12,12 @@ export class GalacticAge {
     };
   }
 
-  findAgeOn(planet) {
+  findAgeOn(planet, earthYears = this.earthYears) {
     const planetYear = this.yearConversions[planet];
-    return this.earthYears / planetYear;
+    return earthYears / planetYear;
   }
 
+  // come back and refactor later
   yearsSince(previousAge) {
     const earthYears = this.earthYears - previousAge;
     const mercuryYears = (earthYears / this.yearConversions["Mercury"]).toFixed(2);
@@ -31,5 +32,7 @@ export class GalacticAge {
       Jupiter: `${jupiterYears} Jupiter years have passed.`
     }
   }
+
+ 
 
 }
