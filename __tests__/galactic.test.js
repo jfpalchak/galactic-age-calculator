@@ -13,37 +13,37 @@ describe('GalacticAge', () => {
 
   test('should create a GalacticAge object with planet year conversion rates', () => {
     expect(ageCalculator.yearConversions).toEqual({
-      mercury: .24,
-      venus: .62,
-      mars: 1.88,
-      jupiter: 11.86
+      Mercury: .24,
+      Venus: .62,
+      Mars: 1.88,
+      Jupiter: 11.86
     });
   });
 
   test('should return the given Earth age converted to Mercury years', () => {
-    let mercuryAge = ageCalculator.findAgeOn("mercury");
+    let mercuryAge = ageCalculator.findAgeOn("Mercury");
     expect(mercuryAge).toBeCloseTo(104.17);
   })
 
   test('should return the given Earth age converted to Venus years', () => {
-    let venusAge = ageCalculator.findAgeOn("venus");
+    let venusAge = ageCalculator.findAgeOn("Venus");
     expect(venusAge).toBeCloseTo(40.32);
   });
 
   test('should return the given Earth age converted to Mars years', () => {
-    let marsAge = ageCalculator.findAgeOn("mars");
+    let marsAge = ageCalculator.findAgeOn("Mars");
     expect(marsAge).toBeCloseTo(13.30);
   });
 
 
   test('should return the given Earth age converted to Jupiter years', () => {
-    let jupiterAge = ageCalculator.findAgeOn("jupiter");
+    let jupiterAge = ageCalculator.findAgeOn("Jupiter");
     expect(jupiterAge).toBeCloseTo(2.11);
   });
 
-  test('should return number of Earth years passed since a specified age, relative to initial age given', () => {
-    let earthYears = ageCalculator.yearsSince(20);
-    expect(earthYears).toEqual(5);
+  test('should return an object containing the number of Earth years passed since a specified age', () => {
+    let yearsPassed = ageCalculator.yearsSince(20);
+    expect(yearsPassed["Earth"]).toEqual("5 Earth years have passed.");
   })
 
 
