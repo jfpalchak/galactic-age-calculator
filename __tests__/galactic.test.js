@@ -20,10 +20,15 @@ describe('GalacticAge', () => {
     });
   });
 
-  test('should return the given age converted to Mercury years', () => {
+  test('should return the given Earth age converted to Mercury years', () => {
     let mercuryAge = ageCalculator.inMercuryYears();
     expect(mercuryAge).toBeCloseTo(104.17);
   })
+
+  test('should return the given Earth age converted to Venus years', () => {
+    let venusAge = ageCalculator.inVenusYears();
+    expect(venusAge).toBeCloseTo(40.32);
+  });
 
 
 });
