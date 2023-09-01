@@ -55,7 +55,10 @@ export class GalacticAge {
   howManyDogYears(age = this.earthYears) {
     let dogYears = 0;
  
-    if (age >= 24) {
+    if (age >= 29) {
+      const diff = age - 24;
+      dogYears = (diff/5) + 2;
+    } else if (age >= 24) {
       dogYears = 2;
     } else if (age >= 15) {
       dogYears = 1;
