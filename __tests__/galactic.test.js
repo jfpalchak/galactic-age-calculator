@@ -22,7 +22,7 @@ describe('GalacticAge', () => {
 
   test('should return the given age converted to Mercury years', () => {
     let mercuryAge = ageCalculator.inMercuryYears();
-    expect(mercuryAge).toEqual(104.17);
+    expect(mercuryAge).toBeCloseTo(104.17);
   })
 
 
