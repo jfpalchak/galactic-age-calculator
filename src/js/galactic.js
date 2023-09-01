@@ -11,6 +11,7 @@ export class GalacticAge {
     };
   }
 
+  // return an array of the planets contained within GalacticAge object
   findPlanets() {
     return Object.keys(this.yearConversions);
   }
@@ -39,7 +40,7 @@ export class GalacticAge {
    
     yearList["Earth"] = `${earthYears} Earth ${string}`;
 
-    const planets = Object.keys(this.yearConversions);
+    const planets = this.findPlanets();
     planets.forEach((planet) => {
       let planetYears = this.findAgeOn(planet, earthYears).toFixed(2);
       yearList[planet] = `${planetYears} ${planet} ${string}`;
