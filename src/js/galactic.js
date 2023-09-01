@@ -33,6 +33,11 @@ export class GalacticAge {
     }
   }
 
- 
+  yearsUntil(futureAge) {
+    const earthYears = futureAge - this.earthYears;
+    return {
+      Earth: `${earthYears} Earth years have yet to pass.`
+    }
+  }
 
 }
