@@ -20,6 +20,11 @@ describe('GalacticAge', () => {
     });
   });
 
+  test('should return an array of the planets contained within the GalacticAge object', () => {
+    let planets = ageCalculator.findPlanets();
+    expect(planets).toEqual(['Mercury','Venus','Mars','Jupiter']);
+  });
+
 });
 
 describe('findAgeOn', () => {
