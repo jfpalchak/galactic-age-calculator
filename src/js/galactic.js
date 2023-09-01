@@ -12,6 +12,9 @@ export class GalacticAge {
     };
   }
 
+  inMercuryYears() {
+    return this.earthYears / this.conversions["mercuryYear"];
+  }
 
   
 }
