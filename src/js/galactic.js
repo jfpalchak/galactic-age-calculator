@@ -12,41 +12,15 @@ export class GalacticAge {
     };
   }
 
+  // return conversion of given Earth years to specified planet years
   findAgeOn(planet, earthYears = this.earthYears) {
     const planetYear = this.yearConversions[planet];
     return earthYears / planetYear;
   }
 
-  // yearsSince(previousAge) {
-
-  //   const yearList = {};
-  //   const earthYears = this.earthYears - previousAge;
-  //   yearList["Earth"] = `${earthYears} Earth years have passed.`;
-
-  //   const planets = Object.keys(this.yearConversions);
-  //   planets.forEach((planet) => {
-  //     let planetYears = this.findAgeOn(planet, earthYears).toFixed(2);
-  //     yearList[planet] = `${planetYears} ${planet} years have passed.`;
-  //   });
-  
-  //   return yearList;
-  // }
-
-  // yearsUntil(futureAge) {
-    
-  //   const yearList = {};
-  //   const earthYears = futureAge - this.earthYears;
-  //   yearList["Earth"] = `${earthYears} Earth years have yet to pass.`;
-
-  //   const planets = Object.keys(this.yearConversions);
-  //   planets.forEach((planet) => {
-  //     let planetYears = this.findAgeOn(planet, earthYears).toFixed(2);
-  //     yearList[planet] = `${planetYears} ${planet} years have yet to pass.`;
-  //   });
-    
-  //   return yearList;
-  // }
-
+  // return an object containing the difference in years for a specified age, for each planet:
+  // if the new age is younger than the initial age, return how many years have passed on each planet,
+  // if the new age is older than the initial age, return how many years have yet to pass on each planet
   yearsDifference(otherAge) {
     const yearList = {};
     let earthYears = this.earthYears;
