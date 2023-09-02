@@ -20,7 +20,8 @@ function displayEarthInfo(ageCalculator) {
     `In dog years, you are ${ageCalculator.howManyDogYears()} years old.`
   );
 
-  divEarth.append(liFly, liDog);
+  ul.append(liFly, liDog);
+  divEarth.append(ul);
 
 }
 
@@ -33,7 +34,7 @@ function displayPlanetAges(ageCalculator) {
     let pTag = document.createElement('p');
     let div = document.querySelector(`div#${planet}`);
 
-    let string = `On ${planet}, you are: ${planetAge} years old.`
+    let string = `On ${planet}, you are: ${planetAge} years old.`;
 
     div.innerText = null;
     pTag.append(string);
