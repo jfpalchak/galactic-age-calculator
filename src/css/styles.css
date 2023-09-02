@@ -27,6 +27,7 @@ input {
   border: solid rgb(198, 195, 195) 1px;
   color: #FFFFFF;
   margin-left: 10px;
+  width: 60px;
 }
 
 button {
@@ -47,6 +48,8 @@ button {
 
 li {
   margin: 10px;
+  padding-right: 25px;
+  list-style: none;
 }
 
 /* RESPONSIVE DESIGN */
