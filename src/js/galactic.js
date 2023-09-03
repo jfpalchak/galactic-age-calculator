@@ -11,6 +11,12 @@ export class GalacticAge {
     };
   }
 
+  // calculate user age by the difference of the current date and user's birth date,
+  // set earthYears property to calculated age
+  setAgeByDate() {
+  
+  }
+
   // return an array of the planets contained within GalacticAge object
   findPlanets() {
     return Object.keys(this.yearConversions);
