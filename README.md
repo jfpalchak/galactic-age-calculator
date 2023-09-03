@@ -2,7 +2,7 @@
 
 #### By _**Joey Palchak**_
 
-#### _{Brief description of application}_
+#### _An age calculator web app, showcasing an understanding of unit testing, webpack, and managing dependencies with npm._
 
 ## Technologies Used
 
@@ -15,19 +15,19 @@
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+This is an age calculator web application, converting a user's age in Earth years to their respective age on other planets.
 
 ## Setup/Installation Requirements
 
 1. Copy the **[URL](https://github.com/jfpalchak/galactic-age-calculator.git)** provided for this repository.
 2. Open Terminal.
-3. Change your working directory to where you want the cloned directory.
+3. Change your working directory to where you'd like to create the cloned directory.
 4. In your terminal, type `git clone` and use the copied URL from Step 1. Or, copy the following git command:
 ```bash
 $ git clone https://github.com/jfpalchak/galactic-age-calculator.git
 ```
 5. Navigate to the root of the newly cloned directory.
-6. In your terminal, assuming Node.js and npm is installed, type the following command to install the project's dependencies found in `package.json`:
+6. In your terminal, assuming Node and npm are installed, type the following command to install the project's dependencies found in `package.json`:
 ```bash
 $ npm install
 ```
@@ -36,12 +36,12 @@ $ npm install
 $ npm run build
 ```
   * Additionally, if you wish to:
-    1. Lint the JavaScript source code, you can do so by running the following command in the   application's root directory: 
+    1. Lint the JavaScript source code, you can do so by running the following command in the application's root directory: 
     > `$ npm run lint`
-    2. Run tests on the backend JavaScript with Jest, you can do so by running the following command in the application's root directory: 
+    2. Run all tests covering the backend JavaScript with Jest, you can do so by running the following command in the application's root directory: 
     > `$ npm run test`
     
-8. And finally, to run a live server of the project, type the following line in your terminal:
+8. And finally, to run a live server of the project and use the application, type the following line in your terminal:
 ```bash
 $ npm run start
 ```
