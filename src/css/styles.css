@@ -2,6 +2,7 @@
 .container {
   margin: 10px auto;
 }
+
 h1 {
   color: #FFFFFF;
 }
@@ -9,9 +10,9 @@ h1 {
 h3 {
   color: #FFFFFF;
 }
+
 body {
-  background-color: #303030
-  /* color: white; */
+  background-color: #303030;
 }
 
 #hidden {
@@ -39,12 +40,12 @@ input {
 }
 
 /* RESULTS */
-
 .phone-stack {
   background-color: #424242;
+  width: 30%;
   border-radius: 8px;
   padding: 10px;
-  height: 250px;
+  height: 270px;
   overflow-y: auto;
   text-align: start;
   color: #FFFFFF;
@@ -56,10 +57,19 @@ img {
   object-position: center top;
 }
 
+ul {
+  padding-left: 2px;
+}
+
 li {
   margin: 10px;
   list-style: none;
 }
+
+table {
+  width: 100%;
+}
+
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 770px) {
