@@ -13,12 +13,14 @@ function displayEarthInfo(ageCalculator) {
 
   divEarth.innerText = null;
 
-  liFly.append(
-    `During your ${Math.floor(ageCalculator.findAgeOn("Earth"))} years on Earth, you have outlived more than ${ageCalculator.howManyMayflies()} mayflies.`
-  );
-  liDog.append(
-    `In dog years, you are ${ageCalculator.howManyDogYears()} years old.`
-  );
+  const userAge = Math.floor(ageCalculator.findAgeOn("Earth"))
+  const userMayFlies = ageCalculator.howManyMayflies();
+  const userDogYears = ageCalculator.howManyDogYears();
+
+  const flyString = `During your ${userAge} years on Earth, you have outlived more than ${userMayFlies} mayflies.`
+  const dogString = `In dog years, you are ${userDogYears} years old.`
+  liFly.append(flyString);
+  liDog.append(dogString);
 
   ul.append(liFly, liDog);
   divEarth.append(ul);
@@ -30,7 +32,7 @@ function displayPlanetAges(ageCalculator) {
 
   const planets = ageCalculator.findPlanets();
   planets.forEach((planet) => {
-    let planetAge = ageCalculator.findAgeOn(planet).toFixed(2);
+    let planetAge = ageCalculator.findAgeOn(planet);
     let pTag = document.createElement('p');
     let div = document.querySelector(`div#${planet}`);
 
@@ -52,9 +54,11 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
   const userBirthDate = document.querySelector("input#user-age").value;
 
-  console.log(userBirthDate);
+  if (!userBirthDate) {
+    return null;
+  }
 
-  const ageCalculator = new GalacticAge();
+  let ageCalculator = new GalacticAge();
   ageCalculator.setAgeByDate(userBirthDate);
 
   displayPlanetAges(ageCalculator);
