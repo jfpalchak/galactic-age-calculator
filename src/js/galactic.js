@@ -11,10 +11,18 @@ export class GalacticAge {
     };
   }
 
-  // calculate user age by the difference of the current date and user's birth date,
+  // calculate user age by the difference of the current Date and user's birth Date,
   // set earthYears property to calculated age
-  setAgeByDate() {
-  
+  setAgeByDate(givenDate) {
+    const currentDate = new Date();
+    const birthDate = new Date(givenDate);
+
+    const diffInMilliSec = currentDate - birthDate;
+
+    const mSecInYear = 31536000000;
+    const age = diffInMilliSec / mSecInYear;
+
+    this.earthYears = parseFloat(age.toFixed(2));
   }
 
   // return an array of the planets contained within GalacticAge object
