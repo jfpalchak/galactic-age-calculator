@@ -77,7 +77,7 @@ describe('yearsDifference', () => {
     yearsPassed = ageCalculator.yearsDifference(20);
   });
 
-  test('should return an object containing the number of years passed on each planet since a specified age', () => {
+  test('should return an object containing the number of years passed on each planet SINCE a specified age', () => {
     expect(yearsPassed).toEqual({
       Earth: "5 Earth years have passed.",
       Mercury: "20.83 Mercury years have passed.",
