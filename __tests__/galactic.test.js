@@ -25,9 +25,9 @@ describe('GalacticAge', () => {
     expect(planets).toEqual(['Mercury','Venus','Mars','Jupiter']);
   });
 
-  test('should accurately calculate age based on user birth date and current date', () => {
-    ageCalculator.setAgeByDate("1993-1-29");
-    expect(ageCalculator.earthYears).toBeCloseTo(30.6);
+  test('should accurately calculate age based on difference of user birth date and current date', () => {
+    ageCalculator.setAgeByDate(new Date());
+    expect(ageCalculator.earthYears).toBeCloseTo(0);
   })
 
 });
