@@ -22,7 +22,7 @@ export class GalacticAge {
       return earthYears;
     }
     const planetYear = this.yearConversions[planet];
-    return (earthYears / planetYear);
+    return parseFloat((earthYears / planetYear).toFixed(2));
   }
 
   // return an object containing the difference in years for a specified age, for each planet:
@@ -45,7 +45,7 @@ export class GalacticAge {
 
     const planets = this.findPlanets();
     planets.forEach((planet) => {
-      let planetYears = this.findAgeOn(planet, earthYears).toFixed(2);
+      let planetYears = this.findAgeOn(planet, earthYears);
       yearList[planet] = `${planetYears} ${planet} ${string}`;
     });
     
@@ -86,7 +86,7 @@ export class GalacticAge {
     const mSecInYear = 31536000000;
     const age = diffInMilliSec / mSecInYear;
 
-    this.earthYears = parseFloat(age.toFixed(1));
+    this.earthYears = parseFloat(age.toFixed(2));
   }
 
 
