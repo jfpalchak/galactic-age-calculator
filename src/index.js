@@ -48,19 +48,24 @@ function displayPlanetAges(ageCalculator) {
 
 }
 
+function handleEverything() {
 // event listener for form submission, which handles all UI logic
-document.querySelector("form").addEventListener("submit", (e) => {
-  e.preventDefault();
+  document.querySelector("form").addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  const userBirthDate = document.querySelector("input#user-age").value;
+    const userBirthDate = document.querySelector("input#user-age").value;
 
-  if (!userBirthDate) {
-    return null;
-  }
+    if (!userBirthDate) {
+      return null;
+    }
 
-  let ageCalculator = new GalacticAge();
-  ageCalculator.setAgeByDate(userBirthDate);
+    let ageCalculator = new GalacticAge();
+    ageCalculator.setAgeByDate(userBirthDate);
 
-  displayPlanetAges(ageCalculator);
+    displayPlanetAges(ageCalculator);
 
-});
+  });
+
+}
+
+handleEverything();
