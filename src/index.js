@@ -48,8 +48,9 @@ function displayPlanetAges(ageCalculator) {
 
 }
 
+// handle all UI logic
 function handleEverything() {
-// event listener for form submission, which handles all UI logic
+// event listener for form submission
   document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -65,7 +66,6 @@ function handleEverything() {
     displayPlanetAges(ageCalculator);
 
   });
-
 }
 
 handleEverything();
