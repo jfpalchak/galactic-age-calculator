@@ -65,7 +65,7 @@ export class GalacticAge {
  
     if (age >= 29) {
       const diff = age - 24;
-      dogYears = (diff/5) + 2;
+      dogYears = parseFloat(((diff/5) + 2).toFixed(2));
     } else if (age >= 24) {
       dogYears = 2;
     } else if (age >= 15) {
