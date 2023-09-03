@@ -14,7 +14,7 @@ function displayEarthInfo(ageCalculator) {
   divEarth.innerText = null;
 
   liFly.append(
-    `During your ${ageCalculator.findAgeOn("Earth")} years on Earth, you have outlived more than ${ageCalculator.howManyMayflies()} mayflies.`
+    `During your ${Math.floor(ageCalculator.findAgeOn("Earth"))} years on Earth, you have outlived more than ${ageCalculator.howManyMayflies()} mayflies.`
   );
   liDog.append(
     `In dog years, you are ${ageCalculator.howManyDogYears()} years old.`
@@ -50,9 +50,12 @@ function displayPlanetAges(ageCalculator) {
 document.querySelector("form").addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const userAge = document.querySelector("input#user-age").value;
+  const userBirthDate = document.querySelector("input#user-age").value;
 
-  const ageCalculator = new GalacticAge(userAge);
+  console.log(userBirthDate);
+
+  const ageCalculator = new GalacticAge();
+  ageCalculator.setAgeByDate(userBirthDate);
 
   displayPlanetAges(ageCalculator);
 
