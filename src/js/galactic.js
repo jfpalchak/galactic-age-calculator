@@ -86,7 +86,7 @@ export class GalacticAge {
     const mSecInYear = 31536000000;
     const age = diffInMilliSec / mSecInYear;
 
-    this.earthYears = parseFloat(age.toFixed(2));
+    this.earthYears = parseFloat(age.toFixed(1));
   }
 
 

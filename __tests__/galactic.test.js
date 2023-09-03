@@ -27,7 +27,7 @@ describe('GalacticAge', () => {
 
   test('should accurately calculate age based on user birth date and current date', () => {
     ageCalculator.setAgeByDate("1993-1-29");
-    expect(ageCalculator.earthYears).toBeCloseTo(30.61);
+    expect(ageCalculator.earthYears).toBeCloseTo(30.6);
   })
 
 });
