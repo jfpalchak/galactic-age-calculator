@@ -23,7 +23,7 @@ A user will find the `GalacticAge` class contains the following features:
 3. **Passage of Time:** Compare a past or future birthday to your current Earth age to determine how much time _will_ pass on each planet, or how much time has _yet_ to pass on each planet.
 4. **Mayfly Lifespan:** Discover how many mayfly lifespans your Earth age has lived through.
 5. **Dog Years:** Convert your Earth age into dog years, considering various age ranges for dogs.
-6. **Age Calculation by Date:** Set your age providing your birth date, allowing for precise age calculations based on the current date.
+6. **Age Calculation by Date:** Set your age providing your birth date, allowing for much more precise age calculations based on the current date.
 
 Users can experience a number of these features by accessing the webpage and submitting their date of birth. Upon submission, each planetary card on the webpage will populate with the appropriate age conversion. Additional age-related conversions will populate the Earth card.
 
@@ -89,7 +89,7 @@ $ npm run start
 
 ### _Alternatively:_
 
-1. Go to the website directly via **[GitHub Pages](#link)**.
+1. Go to the website directly via **[GitHub Pages](https://jfpalchak.github.io/galactic-age-calculator/)**.
 
 ## Known Bugs
 
