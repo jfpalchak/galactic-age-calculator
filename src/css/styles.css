@@ -25,6 +25,8 @@ body {
   border-radius: 8px;
   padding: 10px;
   color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
 }
 
 input {
@@ -37,6 +39,10 @@ input {
 .btn {
   margin-left: 10px;
 }
+
+/* .form2 {
+
+} */
 
 /* RESULTS */
 .phone-stack {
