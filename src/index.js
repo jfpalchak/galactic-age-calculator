@@ -13,12 +13,12 @@ function displayEarthInfo(ageCalculator) {
 
   divEarth.innerText = null;
 
-  const userAge = Math.floor(ageCalculator.findAgeOn("Earth"))
+  const userAge = Math.floor(ageCalculator.findAgeOn("Earth"));
   const userMayFlies = ageCalculator.howManyMayflies();
   const userDogYears = ageCalculator.howManyDogYears();
 
-  const flyString = `During your ${userAge} years on Earth, you have outlived more than ${userMayFlies} mayflies.`
-  const dogString = `In dog years, you are ${userDogYears} years old.`
+  const flyString = `During your ${userAge} years on Earth, you have outlived more than ${userMayFlies} mayflies.`;
+  const dogString = `In dog years, you are ${userDogYears} years old.`;
   liFly.append(flyString);
   liDog.append(dogString);
 
