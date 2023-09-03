@@ -93,7 +93,7 @@ $ npm run start
 
 ## Known Bugs
 
-* Submitting an empty date, after a valid date has been submitted, does not clear the information currently displayed on the planetary cards.
+* The UI logic for the webpage does not utilize all functionality of the GalacticAge class.
 
 ## License
 
