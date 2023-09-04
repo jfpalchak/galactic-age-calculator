@@ -3,15 +3,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import { GalacticAge } from './js/galactic.js';
 
-// display all information relevant to Earth 
+// display age conversions relevant to Earth 
 function displayEarthInfo(ageCalculator) {
 
   const ul = document.createElement('ul');
   const liFly = document.createElement('li');
   const liDog = document.createElement('li');
   const divEarth = document.querySelector('div#Earth');
+  const divDiff = document.querySelector(`div#EarthDiff`);
 
   divEarth.innerText = null;
+  divDiff.innerText = null;
 
   const userAge = Math.floor(ageCalculator.findAgeOn("Earth"));
   const userMayFlies = ageCalculator.howManyMayflies();
@@ -27,7 +29,7 @@ function displayEarthInfo(ageCalculator) {
 
 }
 
-// display all age results for each planet
+// display all age results for each planet, reveal 'Find Difference' form
 function displayPlanetAges(ageCalculator) {
 
   const planets = ageCalculator.findPlanets();
@@ -35,22 +37,43 @@ function displayPlanetAges(ageCalculator) {
     let planetAge = ageCalculator.findAgeOn(planet);
     let pTag = document.createElement('p');
     let div = document.querySelector(`div#${planet}`);
+    let div2 = document.querySelector(`div#${planet}Diff`);
 
-    let string = `On ${planet}, you are: ${planetAge} years old.`;
+    let string = `${planetAge} years old.`;
 
     div.innerText = null;
+    div2.innerText = null;
     pTag.append(string);
     div.append(pTag);
     
   });
 
   displayEarthInfo(ageCalculator);
+  document.querySelector("form.form2").removeAttribute('id', 'hidden');
 
+}
+
+// display the difference in years between current age and second age
+function displayDifferences(yearsDifference, ageCalc, otherAge) {
+
+  Object.keys(yearsDifference).forEach((planet) => {
+
+    let string = `Compared to a planetary age of ${ageCalc.findAgeOn(planet, otherAge)}, ${yearsDifference[planet]}`;
+    let pTag = document.createElement('p');
+    let div = document.querySelector(`div#${planet}Diff`);
+    div.innerText = null;
+  
+    pTag.append(string);
+    div.append(pTag);
+  });
 }
 
 // handle all UI logic
 function handleEverything() {
-// event listener for form submission
+
+  let ageCalculator = new GalacticAge();
+
+  // event listener for birth date form submission
   document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -60,10 +83,25 @@ function handleEverything() {
       return null;
     }
 
-    let ageCalculator = new GalacticAge();
     ageCalculator.setAgeByDate(userBirthDate);
 
     displayPlanetAges(ageCalculator);
+
+  });
+
+  // event listener for age difference form submission
+  document.querySelector(".form2").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const otherAge = document.querySelector("input#other-age").value;
+
+    if (!otherAge) {
+      return null;
+    }
+
+    const yearsDifference = ageCalculator.yearsDifference(otherAge);
+
+    displayDifferences(yearsDifference, ageCalculator, otherAge);
 
   });
 }
