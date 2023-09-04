@@ -58,7 +58,7 @@ function displayDifferences(yearsDifference, ageCalc, otherAge) {
 
   Object.keys(yearsDifference).forEach((planet) => {
 
-    let string = `Compared to a planetary age of ${ageCalc.findAgeOn(planet, otherAge)}, ${yearsDifference[planet]}`;
+    let string = `Comparing your current age to a planetary age of ${ageCalc.findAgeOn(planet, otherAge)}, ${yearsDifference[planet]}`;
     let pTag = document.createElement('p');
     let div = document.querySelector(`div#${planet}Diff`);
     div.innerText = null;
