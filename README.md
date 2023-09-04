@@ -93,7 +93,7 @@ $ npm run start
 
 ## Known Bugs
 
-* The UI logic for the webpage does not utilize all functionality of the GalacticAge class.
+* Form input and button styles are not consistent below viewport width of 1000px.
 
 ## License
 
