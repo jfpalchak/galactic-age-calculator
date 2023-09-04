@@ -84,7 +84,7 @@ describe('yearsDifference', () => {
 
   test('should return an object containing the number of years passed on each planet SINCE a specified age', () => {
     expect(yearsPassed).toEqual({
-      Earth: "5 Earth years have passed.",
+      Earth: "5.00 Earth years have passed.",
       Mercury: "20.83 Mercury years have passed.",
       Venus: "8.06 Venus years have passed.",
       Mars: "2.66 Mars years have passed.",
@@ -94,7 +94,7 @@ describe('yearsDifference', () => {
 
   test('should return an object containing the number of years YET to pass on each planet until a specified age', () => {
     expect(yearsToGo).toEqual({
-      Earth: "10 Earth years have yet to pass.",
+      Earth: "10.00 Earth years have yet to pass.",
       Mercury: "41.67 Mercury years have yet to pass.",
       Venus: "16.13 Venus years have yet to pass.",
       Mars: "5.32 Mars years have yet to pass.",

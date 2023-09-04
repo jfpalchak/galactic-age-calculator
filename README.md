@@ -93,7 +93,7 @@ $ npm run start
 
 ## Known Bugs
 
-* Submitting an empty date, after a valid date has been submitted, does not clear the information currently displayed on the planetary cards.
+* Form input and button styles are not consistent below viewport width of 1000px.
 
 ## License
 

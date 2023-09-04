@@ -41,7 +41,7 @@ export class GalacticAge {
       string = "years have yet to pass.";
     }
    
-    yearList["Earth"] = `${earthYears} Earth ${string}`;
+    yearList["Earth"] = `${earthYears.toFixed(2)} Earth ${string}`;
 
     const planets = this.findPlanets();
     planets.forEach((planet) => {
