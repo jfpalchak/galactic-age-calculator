@@ -15,7 +15,7 @@ function displayEarthInfo(ageCalculator) {
   divEarth.innerText = null;
   divDiff.innerText = null;
 
-  const userAge = Math.floor(ageCalculator.findAgeOn("Earth"));
+  const userAge = Math.floor(ageCalculator.findAgeOn("Earth", ageCalculator.earthYears));
   const userMayFlies = ageCalculator.howManyMayflies();
   const userDogYears = ageCalculator.howManyDogYears();
 
@@ -34,7 +34,7 @@ function displayPlanetAges(ageCalculator) {
 
   const planets = ageCalculator.findPlanets();
   planets.forEach((planet) => {
-    let planetAge = ageCalculator.findAgeOn(planet);
+    let planetAge = ageCalculator.findAgeOn(planet, ageCalculator.earthYears);
     let pTag = document.createElement('p');
     let div = document.querySelector(`div#${planet}`);
     let div2 = document.querySelector(`div#${planet}Diff`);
@@ -57,8 +57,8 @@ function displayPlanetAges(ageCalculator) {
 function displayDifferences(yearsDifference, ageCalc, otherAge) {
 
   Object.keys(yearsDifference).forEach((planet) => {
-
-    let string = `Comparing your current age to a planetary age of ${ageCalc.findAgeOn(planet, otherAge)}, ${yearsDifference[planet]}`;
+    let otherPlanetAge = ageCalc.findAgeOn(planet, otherAge);
+    let string = `Comparing your current age to a planetary age of ${otherPlanetAge}, ${yearsDifference[planet]}`;
     let pTag = document.createElement('p');
     let div = document.querySelector(`div#${planet}Diff`);
     div.innerText = null;
