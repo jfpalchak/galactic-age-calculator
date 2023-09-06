@@ -17,7 +17,7 @@ export class GalacticAge {
   }
 
   // return conversion of given Earth years to specified planet years
-  findAgeOn(planet, earthYears = this.earthYears) {
+  findAgeOn(planet, earthYears) {
     if (planet === "Earth") {
       return earthYears;
     }
@@ -40,7 +40,7 @@ export class GalacticAge {
       earthYears = otherAge - earthYears;
       string = "years have yet to pass.";
     }
-   
+
     yearList["Earth"] = `${earthYears.toFixed(2)} Earth ${string}`;
 
     const planets = this.findPlanets();
@@ -60,9 +60,10 @@ export class GalacticAge {
   }
 
   // returns the dog years conversion of the given earth age
-  howManyDogYears(age = this.earthYears) {
+  howManyDogYears() {
     let dogYears = 0;
- 
+    let age = this.earthYears;
+
     if (age >= 29) {
       const diff = age - 24;
       dogYears = parseFloat(((diff/5) + 2).toFixed(2));
