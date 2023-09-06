@@ -40,34 +40,29 @@ describe('findAgeOn', () => {
   });
 
   test('should return the given Earth age if Earth is entered as an argument', () => {
-    let age = ageCalculator.findAgeOn("Earth");
+    let age = ageCalculator.findAgeOn("Earth", ageCalculator.earthYears);
     expect(age).toBeCloseTo(25);
   });
 
   test('should return the given Earth age converted to Mercury years', () => {
-    let mercuryAge = ageCalculator.findAgeOn("Mercury");
+    let mercuryAge = ageCalculator.findAgeOn("Mercury", ageCalculator.earthYears);
     expect(mercuryAge).toBeCloseTo(104.17);
   });
 
   test('should return the given Earth age converted to Venus years', () => {
-    let venusAge = ageCalculator.findAgeOn("Venus");
+    let venusAge = ageCalculator.findAgeOn("Venus", ageCalculator.earthYears);
     expect(venusAge).toBeCloseTo(40.32);
   });
 
   test('should return the given Earth age converted to Mars years', () => {
-    let marsAge = ageCalculator.findAgeOn("Mars");
+    let marsAge = ageCalculator.findAgeOn("Mars", ageCalculator.earthYears);
     expect(marsAge).toBeCloseTo(13.30);
   });
 
   test('should return the given Earth age converted to Jupiter years', () => {
-    let jupiterAge = ageCalculator.findAgeOn("Jupiter");
+    let jupiterAge = ageCalculator.findAgeOn("Jupiter", ageCalculator.earthYears);
     expect(jupiterAge).toBeCloseTo(2.11);
   });
-
-  test('should override initial this.earthYears property if a new Earth age is entered as second argument', () => {
-    let newJupiterAge = ageCalculator.findAgeOn("Jupiter", 5);
-    expect(newJupiterAge).toBeCloseTo(0.42);
-  })
 
 });
 
@@ -139,13 +134,5 @@ describe('howManyDogYears', () => {
     let dogYears = ageCalculator.howManyDogYears();
     expect(dogYears).toEqual(4);
   });
-
-  test('should calculate dog years for any Earth age given as an optional argument', () => {
-    let ageCalculator = new GalacticAge(34);
-    let dogYears = ageCalculator.howManyDogYears(40);
-    expect(dogYears).toEqual(5.2);
-  });
-
-
 
 });
